@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### Get all comments
+GET {{baseUrl}}/comments
+Content-Type: application/json
+
+###
+
+### Create comment
+POST {{baseUrl}}/comments
+Content-Type: application/json
+
+{
+  "author_name": "Blend 285",
+  "content": "have a good day"
+}
+
+###
+
+### Create comment - validation error (empty author_name)
+POST {{baseUrl}}/comments
+Content-Type: application/json
+
+{
+  "author_name": "",
+  "content": "have a good day"
+}
+
+###
+
+### Create comment - validation error (empty content)
+POST {{baseUrl}}/comments
+Content-Type: application/json
+
+{
+  "author_name": "Blend 285",
+  "content": ""
+}
